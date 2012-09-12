@@ -1,0 +1,8 @@
+var templates = [
+{
+  name: "index", path: "index.dust"
+},
+{
+  name: "partial", path: "partial.dust"
+}
+];
