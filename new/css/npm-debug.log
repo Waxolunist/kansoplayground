@@ -1,0 +1,47 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'lessc' ]
+2 info using npm@1.1.59
+3 info using node@v0.8.8
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 verbose read json C:\Users\Christian\Development\package.json
+6 verbose read json C:\Users\Christian\Development\node_modules\less\package.json
+7 verbose read json C:\Users\Christian\Development\package.json
+8 verbose cache add [ 'lessc', null ]
+9 silly cache add name=undefined spec="lessc" args=["lessc",null]
+10 verbose parsed url { pathname: 'lessc', path: 'lessc', href: 'lessc' }
+11 silly lockFile 8b3a335c-lessc lessc
+12 verbose lock lessc C:\Users\Christian\AppData\Roaming\npm-cache\8b3a335c-lessc.lock
+13 silly lockFile 8b3a335c-lessc lessc
+14 verbose addNamed [ 'lessc', '' ]
+15 verbose addNamed [ null, '' ]
+16 silly lockFile a47c36bc-lessc lessc@
+17 verbose lock lessc@ C:\Users\Christian\AppData\Roaming\npm-cache\a47c36bc-lessc.lock
+18 silly addNameRange { name: 'lessc', range: '', hasData: false }
+19 verbose url raw lessc
+20 verbose url resolving [ 'https://registry.npmjs.org/', './lessc' ]
+21 verbose url resolved https://registry.npmjs.org/lessc
+22 info retry registry request attempt 1 at 23:28:39
+23 http GET https://registry.npmjs.org/lessc
+24 http 404 https://registry.npmjs.org/lessc
+25 silly registry.get cb [ 404,
+25 silly registry.get   { server: 'CouchDB/1.2.0 (Erlang OTP/R15B)',
+25 silly registry.get     date: 'Wed, 12 Sep 2012 21:28:41 GMT',
+25 silly registry.get     'content-type': 'application/json',
+25 silly registry.get     'content-length': '52',
+25 silly registry.get     'cache-control': 'must-revalidate' } ]
+26 silly lockFile a47c36bc-lessc lessc@
+27 error 404 'lessc' is not in the npm registry.
+27 error 404 You should bug the author to publish it
+27 error 404
+27 error 404 Note that you can also install from a
+27 error 404 tarball, folder, or http url, or git url.
+28 error System Windows_NT 6.1.7601
+29 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "lessc"
+30 error cwd C:\Users\Christian\Development\kansoplayground\new\css
+31 error node -v v0.8.8
+32 error npm -v 1.1.59
+33 error code E404
+34 verbose exit [ 1, true ]

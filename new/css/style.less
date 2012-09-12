@@ -1,29 +1,18 @@
-@import url(normalize.css);
-@import url(960_12_col.css);
-@import url(http://fonts.googleapis.com/css?family=Permanent+Marker);
-@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+@import "normalize.css";
+@import "960_12_col.css";
+@import "vendor_prefixes";
+@import "mixin";
 
 @background-color: #e5e9ea;
 @header-color: #657089;
-@navcirclesize: 230px;
-@navfontsize: 170%;
-@navoverlap: 50px;
 @orange: #D15600;
 @green: #73880A;
 @blue: #3F4C6B;
 @red: #D01F3C;
 
-.nomargin {
-  -webkit-margin-before: 0;
-  -webkit-margin-after: 0;
-}
-
-.full-circle(@diameter: 150px) {
-  height:@diameter;
-  width:@diameter;
-  -moz-border-radius:@diameter / 2;
-  -webkit-border-radius:@diameter / 2;
-}
+@navcirclesize: 230px;
+@navfontsize: 170%;
+@navoverlap: 50px;
 
 @-webkit-keyframes rotateIn {
 	0% {
@@ -52,11 +41,6 @@
 		-moz-transform-origin: center center;
 		-moz-transform: rotate(0);
 	}
-}
-.animation(@animation, @duration, @transition) {
-  -webkit-animation: @animation @duration @transition;
-  -moz-animation: @animation @duration @transition;
-  animation: @animation @duration @transition;
 }
 
 body {
