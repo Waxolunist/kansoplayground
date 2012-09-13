@@ -1,0 +1,71 @@
+@import "normalize.css"
+@import "960_12_col.css"
+@import "mixin"
+@import "animations"
+
+background-color = #e5e9ea
+header-color = #657089
+orange = #D15600
+green = #73880A
+blue =  #3F4C6B
+red = #D01F3C
+circle-colors = orange green blue red
+
+nav-circlesize = 230px
+nav-fontsize = 170%
+nav-overlap = 50px
+
+body 
+  margin 0 
+  padding 0
+  height 100% 
+  background background-color url(../img/bg.png)
+  font-family 'Ubuntu', sans-serif
+  > header
+    font-family 'Permanent Marker', cursive
+    margin-top 10%
+    > hgroup
+      > h1
+        color header-color
+      > h2
+        color lighten(header-color, 30)
+      > h1
+      > h2
+        margin-before 0
+        margin-after 0
+  
+  > nav
+    margin-top 3em
+    padding-left (nav-overlap / 2) !important
+    > a
+      font-size nav-fontsize
+      color white
+      text-align center
+      text-transform lowercase
+      text-decoration none
+      line-height nav-circlesize
+      full-circle nav-circlesize
+      opacity .8
+      margin-left (nav-overlap / -2) !important
+      for row in 1 2 3 4
+        &:nth-child({row})
+          z-index 5 - row
+          background-color circle-colors[row - 1]
+      &:hover
+        z-index 5
+
+      > span
+        height 100%
+        width 100%
+        position absolute
+        top 0
+        left 0
+        background-image url(../img/hover-circle.png)
+        background-repeat no-repeat
+        &:hover
+          animation rotateIn 2s linear
+
+  > footer
+    border-top 1px black solid
+    margin-top 2em
+    width 882px !important

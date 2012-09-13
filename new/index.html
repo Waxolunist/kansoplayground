@@ -8,12 +8,22 @@
     <meta name="keywords" content="" />
     <meta name="author" content="" />
 
-    <link href="http://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css">
+    <script type="text/javascript">
+      WebFontConfig = {
+        google: { families: [ 'Permanent+Marker::latin', 'Ubuntu::latin' ] }
+      };
+      (function() {
+         var wf = document.createElement('script');
+         wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+         '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+         wf.type = 'text/javascript';
+         wf.async = 'true';
+         var s = document.getElementsByTagName('script')[0];
+         s.parentNode.insertBefore(wf, s);
+      })(); 
+    </script>
 
-    <link rel="stylesheet/less" type="text/css" href="css/style.less" media="all">
-
-    <script src="js/less.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
   </head>
   <body class="container_12">
 
@@ -30,6 +40,9 @@
       <a class="grid_3" href="#projects">Projects<span></span></a>
       <a class="grid_3 omega" href="#contact">Contact<span></span></a>
     </nav>
+
+    <footer class="grid_12 clearfix">
+    </footer>
 
   </body>
 </html>
