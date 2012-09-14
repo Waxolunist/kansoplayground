@@ -1,8 +1,3 @@
-@import "normalize.css"
-@import "960_12_col.css"
-@import "mixin"
-@import "animations"
-
 background-color = #e5e9ea
 header-color = #657089
 orange = #D15600
@@ -14,6 +9,11 @@ circle-colors = orange green blue red
 nav-circlesize = 230px
 nav-fontsize = 170%
 nav-overlap = 50px
+
+@import "normalize.css"
+@import "960_12_col.css"
+@import "mixin"
+@import "animations"
 
 body 
   margin 0 
@@ -36,7 +36,7 @@ body
   
   > nav
     margin-top 3em
-    padding-left (nav-overlap / 2) !important
+    padding-left (nav-overlap / 2) 
     > a
       font-size nav-fontsize
       color white
@@ -46,13 +46,32 @@ body
       line-height nav-circlesize
       full-circle nav-circlesize
       opacity .8
-      margin-left (nav-overlap / -2) !important
       for row in 1 2 3 4
         &:nth-child({row})
           z-index 5 - row
           background-color circle-colors[row - 1]
       &:hover
         z-index 5
+      &.overlap
+        margin-left (nav-overlap / -2) 
+      &.active.grid_3
+        //position absolute
+        width (nav-circlesize / 2)
+        height (nav-circlesize / 2)
+        line-height (nav-circlesize / 2)
+        font-size (nav-fontsize / 2)
+        margin-left (nav-circlesize / 4) + (nav-overlap / -2)
+        margin-right (nav-circlesize / 4) + 12px
+        //margin-top (nav-circlesize / 2) + 25px
+        //margin-bottom -25px
+        transition-property width,height,line-height,font-size,margin-left,margin-right
+        animation fallDown 2s linear
+        animation-delay 0.5s
+        animation-fill-mode forwards
+        > span
+          animation rotateIn 3s linear
+          &:hover
+            animation rotateIn 2s linear
 
       > span
         height 100%
@@ -62,10 +81,17 @@ body
         left 0
         background-image url(../img/hover-circle.png)
         background-repeat no-repeat
+        background-size 100%
         &:hover
           animation rotateIn 2s linear
 
   > footer
-    border-top 1px black solid
-    margin-top 2em
-    width 882px !important
+      &.overlap.grid_12
+        border-top 1px black solid
+        margin-top 25px
+        width nav-circlesize * 4 + 12px * 3 + (nav-overlap / -2) * 3
+
+.animated
+  transition-duration 1s
+  transition-timing-function ease
+  transition-delay 0s 

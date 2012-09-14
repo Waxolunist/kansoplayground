@@ -10,18 +10,22 @@
 
     <script type="text/javascript">
       WebFontConfig = {
-        google: { families: [ 'Permanent+Marker::latin', 'Ubuntu::latin' ] }
+google: { families: [ 'Permanent+Marker::latin', 'Ubuntu::latin' ] }
       };
-      (function() {
-         var wf = document.createElement('script');
-         wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-         '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-         wf.type = 'text/javascript';
-         wf.async = 'true';
-         var s = document.getElementsByTagName('script')[0];
-         s.parentNode.insertBefore(wf, s);
-      })(); 
-    </script>
+(function() {
+ var wf = document.createElement('script');
+ wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+ '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+ wf.type = 'text/javascript';
+ wf.async = 'true';
+ var s = document.getElementsByTagName('script')[0];
+ s.parentNode.insertBefore(wf, s);
+ })(); 
+</script>
+
+    <script type="text/javascript" src="js/jquery-1.8.1.js"></script>
+    <script type="text/javascript" src="js/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
 
     <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
   </head>
@@ -34,14 +38,14 @@
       </hgroup>
     </header>
 
-    <nav class="grid_12 clearfix">
-      <a class="grid_3 alpha" href="#about">About<span></span></a>
-      <a class="grid_3" href="#resume">Resume<span></span></a>
-      <a class="grid_3" href="#projects">Projects<span></span></a>
-      <a class="grid_3 omega" href="#contact">Contact<span></span></a>
+    <nav class="overlap grid_12 clearfix">
+      <a class="overlap grid_3 alpha animated" href="#about">About<span></span></a>
+      <a class="overlap grid_3 animated" href="#resume">Resume<span></span></a>
+      <a class="overlap grid_3 animated" href="#projects">Projects<span></span></a>
+      <a class="overlap grid_3 omega animated" href="#contact">Contact<span></span></a>
     </nav>
 
-    <footer class="grid_12 clearfix">
+    <footer class="overlap grid_12 clearfix">
     </footer>
 
   </body>
