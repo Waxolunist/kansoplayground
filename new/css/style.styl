@@ -34,9 +34,19 @@ body
         margin-before 0
         margin-after 0
   
-  > nav
+  > nav.overlap.grid_12
     margin-top 3em
     padding-left (nav-overlap / 2) 
+    padding-bottom 25px
+    height nav-circlesize
+    width nav-circlesize * 4 + 12px * 3 + (nav-overlap / -2) * 4
+    border-bottom 1px black solid
+    &.active
+      width nav-circlesize * 4 + 12px * 3 + (nav-overlap / -2) * 3
+      animation tilt 1.5s linear
+      animation-delay 2.5s
+      animation-fill-mode both
+      
     > a
       font-size nav-fontsize
       color white
@@ -62,10 +72,8 @@ body
         font-size (nav-fontsize / 2)
         margin-left (nav-circlesize / 4) + (nav-overlap / -2)
         margin-right (nav-circlesize / 4) + 12px
-        //margin-top (nav-circlesize / 2) + 25px
-        //margin-bottom -25px
         transition-property width,height,line-height,font-size,margin-left,margin-right
-        animation fallDown 2s linear
+        animation fallDown 1.5s linear
         animation-delay 0.5s
         animation-fill-mode forwards
         > span
@@ -84,12 +92,6 @@ body
         background-size 100%
         &:hover
           animation rotateIn 2s linear
-
-  > footer
-      &.overlap.grid_12
-        border-top 1px black solid
-        margin-top 25px
-        width nav-circlesize * 4 + 12px * 3 + (nav-overlap / -2) * 3
 
 .animated
   transition-duration 1s

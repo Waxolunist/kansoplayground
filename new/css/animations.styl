@@ -11,35 +11,26 @@
 
 @keyframes fallDown
   0%
-    margin-top 0
-    margin-bottom 0
+    transform translateY(0) 
   30%
-    margin-top (((nav-circlesize / 2) + 25px) / 2)
-    margin-bottom -25px
-  60%
-    margin-top (nav-circlesize / 2) + 25px
-    margin-bottom -25px
+    transform translateY(((nav-circlesize / 2) + 25px) / 1.5)
+  50%
+    transform translateY((nav-circlesize / 2) + 25px)
   70%
-    margin-top (nav-circlesize / 2) + 25px - 30px
-    margin-bottom -25px
+    transform translateY((nav-circlesize / 2) + 25px - 20px)
   75%
-    margin-top (nav-circlesize / 2) + 25px
-    margin-bottom -25px
+    transform translateY((nav-circlesize / 2) + 25px)
   80%
-    margin-top (nav-circlesize / 2) + 25px - 20px
-    margin-bottom -25px
+    transform translateY((nav-circlesize / 2) + 25px - 10px)
   85%
-    margin-top (nav-circlesize / 2) + 25px
-    margin-bottom -25px
+    transform translateY((nav-circlesize / 2) + 25px)
   90%
-    margin-top (nav-circlesize / 2) + 25px - 10px
-    margin-bottom -25px
-  95%
-    margin-top (nav-circlesize / 2) + 25px
-    margin-bottom -25px
-  97%
-    margin-top (nav-circlesize / 2) + 25px - 3px
-    margin-bottom -25px
+    transform translateY((nav-circlesize / 2) + 25px - 5px)
   100%
-    margin-top (nav-circlesize / 2) + 25px
-    margin-bottom -25px
+    transform translateY((nav-circlesize / 2) + 25px)
+
+@keyframes tilt
+  0%
+    transform rotate(0)
+  100%
+    transform rotate(-10deg)
