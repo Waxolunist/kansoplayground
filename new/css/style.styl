@@ -1,3 +1,6 @@
+@import "normalize.css"
+@import "960"
+
 background-color = #e5e9ea
 header-color = #657089
 orange = #D15600
@@ -6,12 +9,10 @@ blue =  #3F4C6B
 red = #D01F3C
 circle-colors = orange green blue red
 
-nav-circlesize = 230px
+nav-overlap = 2 * (colmargin-right + colmargin-left)
+nav-circlesize = 3 * colwidth + nav-overlap
 nav-fontsize = 170%
-nav-overlap = 50px
 
-@import "normalize.css"
-@import "960_12_col.css"
 @import "mixin"
 @import "animations"
 
@@ -97,3 +98,4 @@ body
   transition-duration 1s
   transition-timing-function ease
   transition-delay 0s 
+
