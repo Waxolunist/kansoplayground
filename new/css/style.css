@@ -449,15 +449,10 @@ body > header > hgroup > h2 {
 }
 body > nav.overlap.grid_12 {
   margin-top: 3em;
-  padding-left: 25px;
   padding-bottom: 25px;
   height: 230px;
-  width: 856px;
+  width: 881px;
   border-bottom: 1px #000 solid;
-}
-body > nav.overlap.grid_12.active {
-  padding-left: 0;
-  width: 995px;
 }
 body > nav.overlap.grid_12.active > a {
   border-radius: 0;
@@ -468,15 +463,17 @@ body > nav.overlap.grid_12.active > a {
   height: 35px;
   line-height: 35px;
   margin-right: 0;
+  width: 220.25px;
 }
 body > nav.overlap.grid_12.active > a.overlap {
+/* remove overlap */
   margin-left: 0;
 }
 body > nav.overlap.grid_12.active > a.active {
   border-bottom: 5px #000 solid;
 }
-body > nav.overlap.grid_12.active > a > span {
-  background-image: none;
+body > nav.overlap.grid_12.active > a::after {
+  content: normal;
 }
 body > nav.overlap.grid_12 > a {
   font-size: 170%;
@@ -492,7 +489,11 @@ body > nav.overlap.grid_12 > a {
   -moz-border-radius: 115px;
   -o-border-radius: 115px;
   -ms-border-radius: 115px;
-/*transition-property height,border-radius,line-height*/
+  transition-property: height, border-radius, line-height;
+  -webkit-transition-property: height, border-radius, line-height;
+  -moz-transition-property: height, border-radius, line-height;
+  -o-transition-property: height, border-radius, line-height;
+  -ms-transition-property: height, border-radius, line-height;
   opacity: 0.8;
 }
 body > nav.overlap.grid_12 > a:nth-child(1) {
@@ -517,7 +518,11 @@ body > nav.overlap.grid_12 > a:hover {
 body > nav.overlap.grid_12 > a.overlap {
   margin-left: -25px;
 }
-body > nav.overlap.grid_12 > a > span {
+body > nav.overlap.grid_12 > a.overlap.alpha {
+  margin-left: 0;
+}
+body > nav.overlap.grid_12 > a::after {
+  content: "";
   height: 100%;
   width: 100%;
   position: absolute;
@@ -527,7 +532,7 @@ body > nav.overlap.grid_12 > a > span {
   background-repeat: no-repeat;
   background-size: 100%;
 }
-body > nav.overlap.grid_12 > a > span:hover {
+body > nav.overlap.grid_12 > a:hover::after {
   animation: rotateIn 2s linear;
   -webkit-animation: rotateIn 2s linear;
   -moz-animation: rotateIn 2s linear;

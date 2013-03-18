@@ -15,6 +15,7 @@ circlecount = length(circle-colors)
 /* colmargins are defined in 960 */
 nav-overlap = colmargin-right + colmargin-left
 nav-circlesize = 3 * colwidth + 2 * nav-overlap
+nav-containersize = nav-circlesize * circlecount - colmargin-left * (circlecount - 1) 
 nav-tabheight = 35px
 nav-fontsize = 170%
 
@@ -40,25 +41,24 @@ body
   /* circles container */
   > nav.overlap.grid_12
     margin-top 3em
-    padding-left nav-overlap 
     padding-bottom 25px
     height nav-circlesize
-    width nav-circlesize * circlecount + colmargin-right * (circlecount - 1) - nav-overlap * circlecount
+    width nav-containersize
     border-bottom 1px black solid
     &.active
-      padding-left 0
-      width 12 * colwidth + (11 * (colmargin-right + colmargin-left))
       > a
         border-radius 0        
         height nav-tabheight
         line-height nav-tabheight
         margin-right 0
+        width (nav-containersize / 4)
         &.overlap
+          /* remove overlap */
           margin-left 0
         &.active
           border-bottom 5px black solid
-        > span 
-          background-image none
+        &::after 
+          content normal
       
     > a
       font-size nav-fontsize
@@ -68,7 +68,7 @@ body
       text-decoration none
       line-height nav-circlesize
       full-circle nav-circlesize
-      /*transition-property height,border-radius,line-height*/
+      transition-property height,border-radius,line-height
       opacity .8
       for row in 1..circlecount
         &:nth-child({row})
@@ -78,8 +78,11 @@ body
         z-index circlecount + 1
       &.overlap
         margin-left nav-overlap * -1
+        &.alpha
+          margin-left 0
 
-      > span
+      &::after
+        content ""
         height 100%
         width 100%
         position absolute
@@ -88,8 +91,8 @@ body
         background-image url(../img/hover-circle.png)
         background-repeat no-repeat
         background-size 100%
-        &:hover
-          animation rotateIn 2s linear
+      &:hover::after
+        animation rotateIn 2s linear
 
 .animated
   transition-duration 1s
