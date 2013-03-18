@@ -6,5 +6,7 @@ $(document).ready(function() {
     var link = $(this);
     link.addClass('active');
     link.parent().addClass('active');
+    $('article').removeClass('active');
+    $(link.attr('href')).addClass('active');
   });
 });

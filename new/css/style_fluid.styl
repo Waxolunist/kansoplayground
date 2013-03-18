@@ -1,6 +1,6 @@
 @import "normalize"
 @import "mixin"
-@import "960"
+@import "960_fluid"
 @import "animations"
 
 background-color = #e5e9ea
@@ -14,7 +14,7 @@ circlecount = length(circle-colors)
 
 /* colmargins are defined in 960 */
 nav-overlap = colmargin-right + colmargin-left
-nav-circlesize = 3 * colwidth + 2 * nav-overlap
+nav-circlesize = 3 * 60px + 2 * nav-overlap
 nav-containersize = nav-circlesize * circlecount - colmargin-left * (circlecount - 1) 
 nav-tabheight = 35px
 nav-fontsize = 170%
@@ -48,7 +48,7 @@ body
     margin-top 3em
     padding-bottom nav-paddingbottom
     height nav-circlesize
-    width nav-containersize
+    width 100%
     &.active
       > a
         border-radius 0        
