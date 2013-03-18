@@ -457,7 +457,7 @@ body > nav.overlap.grid_12 {
 }
 body > nav.overlap.grid_12.active {
   padding-left: 0;
-  width: 920px;
+  width: 995px;
 }
 body > nav.overlap.grid_12.active > a {
   border-radius: 0;
@@ -468,7 +468,6 @@ body > nav.overlap.grid_12.active > a {
   height: 35px;
   line-height: 35px;
   margin-right: 0;
-  width: 218px;
 }
 body > nav.overlap.grid_12.active > a.overlap {
   margin-left: 0;
