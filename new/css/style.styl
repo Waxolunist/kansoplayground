@@ -1,5 +1,7 @@
 @import "normalize.css"
+@import "mixin"
 @import "960"
+@import "animations"
 
 background-color = #e5e9ea
 header-color = #657089
@@ -8,13 +10,13 @@ green = #73880A
 blue =  #3F4C6B
 red = #D01F3C
 circle-colors = orange green blue red
+circlecount = length(circle-colors)
 
+/* colmargins are defined in 960 */
 nav-overlap = 2 * (colmargin-right + colmargin-left)
 nav-circlesize = 3 * colwidth + nav-overlap
+nav-tabheight = 35px
 nav-fontsize = 170%
-
-@import "mixin"
-@import "animations"
 
 body 
   margin 0 
@@ -35,18 +37,29 @@ body
         margin-before 0
         margin-after 0
   
+  /* circles container */
   > nav.overlap.grid_12
     margin-top 3em
     padding-left (nav-overlap / 2) 
     padding-bottom 25px
     height nav-circlesize
-    width nav-circlesize * 4 + 12px * 3 + (nav-overlap / -2) * 4
+    width nav-circlesize * circlecount + colmargin-right * (circlecount - 1) + (nav-overlap / -2) * circlecount
     border-bottom 1px black solid
     &.active
-      width nav-circlesize * 4 + 12px * 3 + (nav-overlap / -2) * 3
-      animation tilt 1.5s linear
-      animation-delay 0.5s
-      animation-fill-mode both
+      padding-left 0
+      width nav-circlesize * circlecount - 
+      > a
+        border-radius 0        
+        height nav-tabheight
+        line-height nav-tabheight
+        margin-right 0
+        width nav-circlesize - colmargin-left + (colmargin-right / circlecount)
+        &.overlap
+          margin-left 0
+        &.active
+          border-bottom 5px black solid
+        > span 
+          background-image none
       
     > a
       font-size nav-fontsize
@@ -56,31 +69,16 @@ body
       text-decoration none
       line-height nav-circlesize
       full-circle nav-circlesize
+      /*transition-property height,border-radius,line-height*/
       opacity .8
-      for row in 1 2 3 4
+      for row in 1..circlecount
         &:nth-child({row})
-          z-index 5 - row
+          z-index circlecount + 1 - row
           background-color circle-colors[row - 1]
       &:hover
-        z-index 5
+        z-index circlecount + 1
       &.overlap
         margin-left (nav-overlap / -2) 
-      &.active.grid_3
-        //position absolute
-        width (nav-circlesize / 2)
-        height (nav-circlesize / 2)
-        line-height (nav-circlesize / 2)
-        font-size (nav-fontsize / 2)
-        margin-left (nav-circlesize / 4) + (nav-overlap / -2)
-        margin-right (nav-circlesize / 4) + 12px
-        transition-property width,height,line-height,font-size,margin-left,margin-right
-        animation fallDown 1.5s linear
-        animation-delay 0.5s
-        animation-fill-mode forwards
-        > span
-          animation rotateIn 2s linear
-          &:hover
-            animation rotateIn 2s linear
 
       > span
         height 100%

@@ -5,3 +5,7 @@ $(window).bind('hashchange', function() {
   link.parent().addClass('active');
 
 });
+$('nav > a').click(function(){
+  
+});
+//TODO add onclick event to, not only on hashchange
