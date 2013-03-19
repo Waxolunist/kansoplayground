@@ -21,15 +21,27 @@ nav-fontsize = 170%
 nav-activeborder = 5px
 nav-paddingbottom = 100px
 
+/* medias */
+medium = '(max-width:' + (nav-containersize + 20px) + ')'
+small = '(max-width:' + (nav-circlesize * 2) + ')'
+
 html
   height 100%
 
 body 
   margin 0 
   padding 0
+  padding-left 20px
   height 100% 
   background background-color url(../img/bg.png)
   font-family 'Ubuntu', sans-serif
+  &.container_12
+    width nav-containersize
+    min-width nav-containersize
+    & .grid_12
+      width 100%
+      margin-left 0
+      margin-right 0
   > header
     font-family 'Permanent Marker', cursive
     margin-top 10%
@@ -48,7 +60,6 @@ body
     margin-top 3em
     padding-bottom nav-paddingbottom
     height nav-circlesize
-    width nav-containersize
     &.active
       > a
         border-radius 0        
@@ -100,10 +111,11 @@ body
 
   > footer.overlap.grid_12
     border-top 1px black solid
-    width nav-containersize
+    width 100%
+    padding-bottom 5em
 
   > article.overlap.grid_12
-    width nav-containersize
+    width 100%
     transition-property height,margin-top,opacity
     height 0px
     margin-top 0px
@@ -121,3 +133,43 @@ body
   transition-timing-function ease
   transition-delay 0s 
 
+@media medium 
+  body
+    &.container_12
+      width (nav-circlesize * 2) - colmargin-right
+      min-width (nav-circlesize * 2) - colmargin-right
+
+      > nav.overlap.grid_12 
+        height nav-circlesize * 2
+        > a:nth-child(3)
+          margin-left 0
+          margin-top (colmargin-right * -1)
+        > a:nth-child(2)
+          margin-right 0
+        > a:nth-child(4)
+          margin-top (colmargin-right * -1)
+        &.active
+          height nav-tabheight * 2 + nav-activeborder * 2 + nav-paddingbottom - 25px
+          > a
+            margin-top 0
+            &.active
+              &:nth-child(1)
+              &:nth-child(2)
+                border-bottom none
+                border-top nav-activeborder black solid
+                margin-top (nav-activeborder * -1)
+  
+      > article.active
+        margin-top nav-tabheight * 2 + nav-activeborder * 2 + nav-paddingbottom - 25px
+      
+        
+@media small 
+  body
+    > nav.overlap.grid_12
+      width (nav-circlesize)
+
+      > a
+        for row in 1..circlecount
+          &:nth-child({row})
+            margin-left 0
+        
